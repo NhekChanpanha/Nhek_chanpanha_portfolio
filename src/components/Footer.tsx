@@ -7,7 +7,7 @@ const Footer = () => {
     {
       name: 'GitHub',
       icon: FaGithub,
-      href: 'https://github.com/LONGCELOT',
+      href: 'https://github.com/NhekChanpanha',
       color: 'white'
     },
     // {
@@ -25,19 +25,19 @@ const Footer = () => {
     {
       name: 'Facebook',
       icon: FaFacebook,
-      href: 'https://facebook.com/vannseavlong',
+      href: 'https://www.facebook.com/nhek.chan.panha',
       color: '#4267B2'
     },
     {
       name: 'Telegram',
       icon: FaTelegram,
-      href: 'https://t.me/SNLRLONG',
+      href: 'https://t.me/panhanhek',
       color: '#0088cc'
     },
     {
       name: 'Email',
       icon: FaEnvelope,
-      href: 'mailto:vannseavlong55@gmail.com',
+      href: 'mailto:panhanhek01@gmail.com',
       color: '#EA4335'
     }
   ]
