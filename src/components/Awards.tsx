@@ -118,7 +118,7 @@ const Awards = () => {
                 <div className="flex items-start gap-6">
                   {/* Number Badge */}
                   <div className="flex-shrink-0">
-                    <div className="text-6xl font-bold text-gray-100 leading-none mb-4">
+                    <div className="text-4xl md:text-6xl font-bold text-gray-100 leading-none mb-4">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                   </div>

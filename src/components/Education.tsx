@@ -52,8 +52,8 @@ const Education = () => {
 
         {/* Timeline Container */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-teal-400 via-cyan-400 to-teal-400"></div>
+          {/* Central Timeline Line (visible on md+) */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-teal-400 via-cyan-400 to-teal-400"></div>
           
           {educationData.map((edu, index) => (
             <motion.div
@@ -62,12 +62,13 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`relative flex items-center mb-16 ${
-                index % 2 === 0 ? 'justify-start' : 'justify-end'
+              className={`relative flex flex-col md:flex-row items-start md:items-center mb-12 ${
+                index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
               }`}
             >
               {/* Timeline Year Badge */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
+              {/* center badge for md+ */}
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-20">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   className="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg shadow-teal-400/30"
@@ -90,9 +91,15 @@ const Education = () => {
                   ease: "easeOut"
                 }}
                 viewport={{ once: true }}
-                className={`w-5/12 ${index % 2 === 0 ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}
+                className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}
               >
                 <div className="bg-white/80 backdrop-blur-sm border border-teal-200/60 rounded-2xl p-7 shadow-2xl hover:border-teal-300 hover:shadow-3xl transition-all duration-300">
+                    {/* small-screen year badge inside card */}
+                    <div className="md:hidden mb-4">
+                      <div className="inline-flex items-center justify-center w-12 h-12 bg-teal-100 text-teal-700 rounded-full font-semibold shadow-sm">
+                        {edu.year}
+                      </div>
+                    </div>
                   {/* Card Header */}
                   <div className="flex items-start gap-4 mb-6">
                     <div className="flex-1">

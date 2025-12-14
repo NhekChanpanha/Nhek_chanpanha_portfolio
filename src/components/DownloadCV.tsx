@@ -26,7 +26,7 @@ const DownloadCV = () => {
     return (
         <motion.button 
             onClick={handleDownload} 
-            className="flex items-center px-6 py-3 background-gradient text-white rounded-md shadow-md"
+            className="flex items-center justify-center px-4 py-2 background-gradient text-white rounded-md shadow-md text-sm btn-equal w-full box-border"
             whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 25px rgba(14, 165, 164, 0.3)"

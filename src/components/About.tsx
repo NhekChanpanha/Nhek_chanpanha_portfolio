@@ -109,8 +109,8 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr_auto_1fr] gap-8 sm:gap-0 place-items-center mt-20 max-w-5xl mx-auto">
+        {/* Stats Section - force single horizontal row like design */}
+        <div className="flex flex-row flex-nowrap items-center justify-center gap-6 mt-20 w-full max-w-5xl mx-auto">
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <motion.div
@@ -118,17 +118,17 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center p-6 w-full"
+                whileHover={{ scale: 1.03, y: -3 }}
+                className="text-center p-2 w-1/3 box-border"
               >
-                <div className="text-2xl mb-3">{stat.icon}</div>
-                <h4 className="text-3xl font-bold text-[#0EA5A4] mb-2">{stat.number}</h4>
-                <p className="text-gray-600 font-medium">{stat.label}</p>
+                <div className="text-xl mb-2">{stat.icon}</div>
+                <h4 className="text-2xl font-bold text-[#0EA5A4] mb-1">{stat.number}</h4>
+                <p className="text-gray-600 font-medium text-sm">{stat.label}</p>
               </motion.div>
-              
-              {/* Vertical Separator - hidden on last item and adapts to screen size */}
+
+              {/* Vertical Separator - visible on all screens to match design */}
               {index < stats.length - 1 && (
-                <div className="hidden sm:block w-[2px] h-20 bg-gray-400 mx-8"></div>
+                <div className="w-[2px] h-14 bg-gray-300 mx-4"></div>
               )}
             </React.Fragment>
           ))}

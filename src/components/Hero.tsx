@@ -42,7 +42,7 @@ const Hero = () => {
   }, [displayText, isDeleting, currentTitle, titles])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
@@ -50,7 +50,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-left order-2 lg:order-1"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -90,21 +90,27 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-row gap-3 items-center flex-nowrap justify-start lg:justify-start"
             >
-              <DownloadCV />
-              <motion.button
-                
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary"
-                whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 25px rgba(14, 165, 164, 0.3)"
-            }}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Get In Touch
-              </motion.button>
+              <div className="w-36 sm:w-40 md:w-44 shrink-0">
+                <div className="w-full">
+                  <DownloadCV />
+                </div>
+              </div>
+
+              <div className="w-36 sm:w-40 md:w-44 shrink-0">
+                <motion.button
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full box-border border-2 border-primary text-primary px-4 py-2 text-sm rounded-md shadow-md bg-transparent btn-equal"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 10px 25px rgba(14, 165, 164, 0.3)"
+                  }}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Get In Touch
+                </motion.button>
+              </div>
             </motion.div>
           </motion.div> 
 
@@ -113,9 +119,9 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end order-1 lg:order-2"
           >
-            <div className="relative w-90 h-90 sm:w-[300px] sm:h-[300px] lg:w-[350px] lg:h-[350px]">
+            <div className="relative hero-img-wrap">
               {/* Profile Image */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -126,7 +132,7 @@ const Hero = () => {
                   src="/images/image.webp"
                   alt="Nhek ChanPanha"
                   fill
-                  className="object-cover scale-140"
+                  className="object-cover"
                   priority
                 />
               </motion.div>

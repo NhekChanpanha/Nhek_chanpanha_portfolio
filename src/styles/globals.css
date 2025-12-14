@@ -93,6 +93,43 @@ body {
   @apply w-6 h-6 text-gray-600 hover:text-primary transition-colors duration-300;
 }
 
+/* Responsive hero/profile image wrapper used by the Hero component */
+.hero-img-wrap {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 1.5rem auto;
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .hero-img-wrap {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-img-wrap {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* Ensure both action buttons keep equal sizing and slightly scale on very narrow screens */
+.btn-equal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+@media (max-width: 380px) {
+  .btn-equal {
+    transform: scale(0.85);
+  }
+}
+
 @media (max-width: 768px) {
   .section-padding {
     @apply py-16 px-4;
