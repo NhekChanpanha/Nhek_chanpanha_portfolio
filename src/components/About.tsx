@@ -109,8 +109,8 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Stats Section - force single horizontal row like design */}
-        <div className="flex flex-row flex-nowrap items-center justify-center gap-6 mt-20 w-full max-w-5xl mx-auto">
+        {/* Stats Section - keep single row and reduce sizes for small screens */}
+        <div className="flex flex-row flex-nowrap items-center justify-center gap-4 mt-16 w-full max-w-5xl mx-auto overflow-hidden">
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <motion.div
@@ -119,16 +119,16 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.03, y: -3 }}
-                className="text-center p-2 w-1/3 box-border"
+                className="text-center p-2 sm:p-4 w-1/3 box-border"
               >
-                <div className="text-xl mb-2">{stat.icon}</div>
-                <h4 className="text-2xl font-bold text-[#0EA5A4] mb-1">{stat.number}</h4>
-                <p className="text-gray-600 font-medium text-sm">{stat.label}</p>
+                <div className="text-lg sm:text-xl mb-1">{stat.icon}</div>
+                <h4 className="text-xl sm:text-2xl font-bold text-[#0EA5A4] mb-1">{stat.number}</h4>
+                <p className="text-gray-600 font-medium text-xs sm:text-sm">{stat.label}</p>
               </motion.div>
 
               {/* Vertical Separator - visible on all screens to match design */}
               {index < stats.length - 1 && (
-                <div className="w-[2px] h-14 bg-gray-300 mx-4"></div>
+                <div className="block w-[2px] h-12 bg-gray-300 mx-3"></div>
               )}
             </React.Fragment>
           ))}
